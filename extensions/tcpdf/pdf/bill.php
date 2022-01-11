@@ -1,5 +1,7 @@
 <?php
 
+ob_start ();
+
 require_once "../../../controllers/sales.controller.php";
 require_once "../../../models/sales.model.php";
 
@@ -217,6 +219,8 @@ $pdf->writeHTML($block3, false, false, false, false, '');
 //SALIDA DEL ARCHIVO 
 
 // $pdf->Output('bill.pdf', 'D');
+
+ob_end_clean();
 
 $pdf->Output('bill.pdf');
 

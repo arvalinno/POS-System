@@ -61,6 +61,8 @@ $pdf->writeHTML($html, false, false, false, false, '');
 
 // ---------------------------------------------------------
 
+ob_end_clean();
+
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
 $pdf->Output('pdf.pdf', 'I');
@@ -69,5 +71,5 @@ $pdf->Output('pdf.pdf', 'I');
 //============================================================+
 // END OF FILE
 //============================================================+
-  ?>
+?>
  

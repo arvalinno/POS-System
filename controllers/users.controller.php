@@ -114,7 +114,7 @@ class ControllerUsers{
 
 					$folder = "views/img/users/".$_POST["newUser"];
 
-					mkdir($folder, 0755);
+					mkdir($folder, 0777, true);
 
 					/*=============================================
 					PHP functions depending on the image

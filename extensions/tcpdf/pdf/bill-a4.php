@@ -292,6 +292,8 @@ $pdf->writeHTML($block5, false, false, false, false, '');
 // ---------------------------------------------------------
 //SALIDA DEL ARCHIVO 
 
+ob_end_clean();
+
 $pdf->Output('bill.pdf', 'D');
 
 }
