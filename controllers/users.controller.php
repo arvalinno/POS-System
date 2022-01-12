@@ -39,7 +39,7 @@ class ControllerUsers{
 						Register date to know last_login
 						=============================================*/
 
-						date_default_timezone_set("America/Bogota");
+						date_default_timezone_set("Asia/Jakarta");
 
 						$date = date('Y-m-d');
 						$hour = date('H:i:s');
@@ -194,7 +194,7 @@ class ControllerUsers{
 					
 					swal({
 						type: "error",
-						title: "No especial characters or blank fields",
+						title: "No special characters or blank fields",
 						showConfirmButton: true,
 						confirmButtonText: "Close"
 			

@@ -75,14 +75,14 @@ $block1 = <<<EOF
 				<br><br>
 				Inventory System
 				
-				<br>
-				NIT: 71.759.963-9
+<!--				<br>-->
+<!--				NIT: 71.759.963-9-->
 
-				<br>
-				Address: 5th Ave. Miami, Fl
+<!--				<br>-->
+<!--				Address: 5th Ave. Miami, Fl-->
 
-				<br>
-				Phone: 300 786 52 49
+<!--				<br>-->
+<!--				Phone: 300 786 52 49-->
 
 				<br>
 				Invoice N.$valueSale
@@ -132,7 +132,7 @@ $block2 = <<<EOF
 	<tr>
 	
 		<td style="width:160px; text-align:right">
-		$ $unitValue Units * $item[quantity]  = $ $totalPrice
+		Rp $unitValue  * $item[quantity] Unit(s)  = $ $totalPrice
 		<br>
 		</td>
 
@@ -148,6 +148,8 @@ $pdf->writeHTML($block2, false, false, false, false, '');
 
 // ---------------------------------------------------------
 
+$totalPriceFinal = number_format($answerSale["totalPrice"],2);
+
 $block3 = <<<EOF
 
 <table style="font-size:9px; text-align:right">
@@ -159,7 +161,7 @@ $block3 = <<<EOF
 		</td>
 
 		<td style="width:80px;">
-			$ $netPrice
+			Rp $netPrice
 		</td>
 
 	</tr>
@@ -171,7 +173,7 @@ $block3 = <<<EOF
 		</td>
 
 		<td style="width:80px;">
-			$ $tax
+			Rp $tax
 		</td>
 
 	</tr>
@@ -191,7 +193,7 @@ $block3 = <<<EOF
 		</td>
 
 		<td style="width:80px;">
-			$ $totalPrice
+			Rp $totalPriceFinal
 		</td>
 
 	</tr>
