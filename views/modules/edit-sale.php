@@ -4,7 +4,7 @@
 
     <h1>
 
-      Edit Sale
+        Sale Details
 
     </h1>
 
@@ -107,27 +107,27 @@
                         
                         <span class="input-group-addon"><i class="fa fa-users"></i></span>
 
-                        <select class="form-control" name="selectCustomer" id="selectCustomer" required>
+                          <input type="text" class="form-control" name="selectCustomer" id="selectCustomer" value="<?php echo $customers["name"]; ?>" readonly>
                           
-                            <option value="<?php echo $customers["id"]; ?>"><?php echo $customers["name"]; ?></option>
+<!--                            <option value="--><?php //echo $customers["id"]; ?><!--">--><?php //echo $customers["name"]; ?><!--</option>-->
 
-                            <?php 
+<!--                            --><?php
+//
+//                            $item = null;
+//                            $value = null;
+//
+//                            $customers = ControllerCustomers::ctrShowCustomers($item, $value);
+//
+//                            foreach ($customers as $key => $value) {
+//                              echo '<option value="'.$value["id"].'">'.$value["name"].'</option>';
+//                            }
+//
+//
+//                            ?>
 
-                            $item = null;
-                            $value = null;
+                        </input>
 
-                            $customers = ControllerCustomers::ctrShowCustomers($item, $value);
-
-                            foreach ($customers as $key => $value) {
-                              echo '<option value="'.$value["id"].'">'.$value["name"].'</option>';
-                            }
-
-
-                            ?>
-
-                        </select>
-
-                        <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAddCustomer" data-dismiss="modal">Add Customer</button></span>
+<!--                        <span class="input-group-addon"><button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modalAddCustomer" data-dismiss="modal">Add Customer</button></span>-->
 
                       </div>
 
@@ -159,8 +159,8 @@
                     
                                   <div class="input-group">
                         
-                                    <span class="input-group-addon"><button type="button" class="btn btn-danger btn-xs removeProduct" idProduct="'.$value["id"].'"><i class="fa fa-times"></i></button></span>
-
+                                    <span class="input-group-addon"><i class="fa fa-circle"></i></span>
+                                    
                                     <input type="text" class="form-control newProductDescription" idProduct="'.$value["id"].'" name="addProduct" value="'.$value["description"].'" readonly required>
 
                                   </div>
@@ -169,7 +169,7 @@
 
                                 <div class="col-xs-3">
                       
-                                  <input type="number" class="form-control newProductQuantity" name="newProductQuantity" min="1" value="'.$value["quantity"].'" stock="'.$lastStock.'" newStock="'.$value["stock"].'" required>
+                                  <input type="text" class="form-control newProductQuantity" name="newProductQuantity" min="1" value="'.$value["quantity"].'" stock="'.$lastStock.'" newStock="'.$value["stock"].'" readonly>
 
                                 </div>
 
@@ -177,7 +177,7 @@
 
                                   <div class="input-group">
 
-                                    <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+                                    <span class="input-group-addon">Rp</span>
                            
                                     <input type="text" class="form-control newProductPrice" realPrice="'.$answer["sellingPrice"].'" name="newProductPrice" value="'.$value["totalPrice"].'" readonly required>
            
@@ -229,7 +229,7 @@
 
                                 <div class="input-group">
                                   
-                                  <input type="number" class="form-control" name="newTaxSale" id="newTaxSale" value="<?php echo $taxPercentage; ?>" min="0" required>
+                                  <input type="text" class="form-control" name="newTaxSale" id="newTaxSale" value="<?php echo $taxPercentage; ?>" min="0" readonly>
 
                                   <input type="hidden" name="newTaxPrice" id="newTaxPrice" value="<?php echo $sale["tax"]; ?>" required>
 
@@ -244,9 +244,10 @@
 
                                 <div class="input-group">
                                   
-                                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>
+<!--                                  <span class="input-group-addon"><i class="ion ion-social-usd"></i></span>-->
+                                    <span class="input-group-addon">Rp</span>
                                   
-                                  <input type="number" class="form-control" name="newSaleTotal" id="newSaleTotal" placeholder="00000" totalSale="<?php echo $sale["netPrice"]; ?>" value="<?php echo $sale["totalPrice"]; ?>" readonly required>
+                                  <input type="text" class="form-control" name="newSaleTotal" id="newSaleTotal" placeholder="00000" totalSale="<?php echo $sale["netPrice"]; ?>" value="<?php echo $sale["totalPrice"]; ?>" readonly required>
 
                                   <input type="hidden" name="saleTotal" id="saleTotal" value="<?php echo $sale["totalPrice"]; ?>" required>
 
@@ -277,16 +278,23 @@
                       <div class="col-xs-6" style="padding-right: 0">
 
                         <div class="input-group">
-                      
-                          <select class="form-control" name="newPaymentMethod" id="newPaymentMethod" required>
-                            
-                              <option value="">Select payment method</option>
-                              <option value="cash">Cash</option>
-                              <option value="CC">Credit Card</option>
-                              <option value="DC">Debit Card</option>
 
-                          </select>
+                            <thead>
 
+                            <th>Payment Method</th>
+
+                            </thead>
+
+                            <input type="text" class="form-control" name="newSeller" id="newSeller" value="<?php echo $sale["paymentMethod"]; ?>" readonly>
+<!--                          <input type="text" class="form-control" name="newPaymentMethod" id="newPaymentMethod" value="--><?php //echo $seller["name"]; ?><!--" required>-->
+<!--                            -->
+<!--                              <option value="">Select payment method</option>-->
+<!--                              <option value="cash">Cash</option>-->
+<!--                              <option value="CC">Credit Card</option>-->
+<!--                              <option value="DC">Debit Card</option>-->
+<!---->
+<!--                          </input>-->
+                            </input>
                         </div>
 
                       </div>
@@ -303,9 +311,9 @@
 
             </div>
 
-            <div class="box-footer">
-              <button type="submit" class="btn btn-primary pull-right">Save changes</button>
-            </div>
+<!--            <div class="box-footer">-->
+<!--              <button type="submit" class="btn btn-primary pull-right">Save changes</button>-->
+<!--            </div>-->
           </form>
 
           <?php
@@ -325,44 +333,44 @@
       =============================================-->
 
 
-      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">
-        
-          <div class="box box-warning">
-            
-            <div class="box-header with-border"></div>
-
-            <div class="box-body">
-              
-              <table class="table table-bordered table-striped dt-responsive salesTable">
-                  
-                <thead>
-
-                   <tr>
-                     
-                     <th style="width:10px">#</th>
-                     <th>Image</th>
-                     <th style="width:30px">Code</th>
-                     <th>Description</th>
-                     <th>Stock</th>
-                     <th>Actions</th>
-
-                   </tr> 
-
-                </thead>
-
-              </table>
-
-            </div>
-
-          </div>
-
-
-      </div>
-
-    </div>
-
+<!--      <div class="col-lg-7 hidden-md hidden-sm hidden-xs">-->
+<!--        -->
+<!--          <div class="box box-warning">-->
+<!--            -->
+<!--            <div class="box-header with-border"></div>-->
+<!---->
+<!--            <div class="box-body">-->
+<!--              -->
+<!--              <table class="table table-bordered table-striped dt-responsive salesTable">-->
+<!--                  -->
+<!--                <thead>-->
+<!---->
+<!--                   <tr>-->
+<!--                     -->
+<!--                     <th style="width:10px">#</th>-->
+<!--                     <th>Image</th>-->
+<!--                     <th style="width:30px">Code</th>-->
+<!--                     <th>Description</th>-->
+<!--                     <th>Stock</th>-->
+<!--                     <th>Actions</th>-->
+<!---->
+<!--                   </tr> -->
+<!---->
+<!--                </thead>-->
+<!---->
+<!--              </table>-->
+<!---->
+<!--            </div>-->
+<!---->
+<!--          </div>-->
+<!---->
+<!---->
+<!--      </div>-->
+<!---->
+<!--    </div>-->
+<!---->
   </section>
-
+<!---->
 </div>
 
 

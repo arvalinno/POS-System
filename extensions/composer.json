@@ -1,6 +1,7 @@
 {
     "require": {
         "mike42/escpos-php": "^2.0",
-        "ext-gd": "*"
+        "ext-gd": "*",
+      "ext-json": "*"
     }
 }

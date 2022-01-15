@@ -133,9 +133,9 @@ if($xml){
 
                   <td>'.$value["paymentMethod"].'</td>
 
-                  <td>$ '.number_format($value["netPrice"],2).'</td>
+                  <td>Rp '.number_format($value["netPrice"],2).'</td>
 
-                  <td>$ '.number_format($value["totalPrice"],2).'</td>
+                  <td>Rp '.number_format($value["totalPrice"],2).'</td>
 
                   <td>'.$value["saledate"].'</td>
 
@@ -154,7 +154,7 @@ if($xml){
                       </button>';
 
                        //if($_SESSION["profile"] == "Administrator"){
-                         echo '<button class="btn btn-warning btnEditSale" idSale="'.$value["id"].'"><i class="fa fa-pencil"></i></button>
+                         echo '<button class="btn btn-warning btnEditSale" idSale="'.$value["id"].'"><i class="fa fa-eye"></i></button>
 
                           <button class="btn btn-danger btnDeleteSale" idSale="'.$value["id"].'"><i class="fa fa-times"></i></button>';
                        //}

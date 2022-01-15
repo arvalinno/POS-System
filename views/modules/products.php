@@ -120,7 +120,7 @@ if($_SESSION["profile"] == "Seller"){
 
                 <select class="form-control input-lg" id="newCategory" name="newCategory">
 
-                  <option value="">Select Category</option>
+<!--                  <option value="">Select Category</option>-->
 
                    <?php
 
@@ -248,7 +248,7 @@ if($_SESSION["profile"] == "Seller"){
 
               <div class="panel">Upload image</div>
 
-              <input id="newProdPhoto" type="file" class="newImage" name="newProdPhoto">
+              <input id="newProdPhoto" type="file" class="newImage" name="newProdPhoto" required>
 
               <p class="help-block">Maximum size 2Mb</p>
 
